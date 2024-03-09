@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Wellness</title>
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+    integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
+  <!-- ==== WOW JS ==== -->
+  <script src="assets/js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</head>
+<style>
+  .select2-selection__rendered {
+    line-height: 41px !important;
+  }
+
+  .select2-container .select2-selection--single {
+    height: 41px !important;
+    text-align: left !important;
+    padding-block: auto !important;
+  }
+
+  .select2-selection__arrow {
+    height: 41px !important;
+  }
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  #ans {
+    overflow: overlay;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+  }
+
+  .result-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 4px;
+  }
+
+  .go-back-icon::before {
+    content: '\2190';
+    /* Unicode arrow left character */
+    margin-right: 5px;
+  }
+
+  #goBackButton {
+    position: fixed;
+    /* Fixed position */
+    top: 30px;
+    /* 10 pixels from the top */
+    left: 10px;
+    /* 10 pixels from the left */
+    padding: 10px;
+    /* Add padding for better visibility */
+    background-color: #3758F9;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Add some border-radius for a rounded appearance */
+    cursor: pointer;
+    /* Set cursor to pointer on hover */
+    width: 10%;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #3758F9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+
+  }
+
+  #goBackButton:hover {
+    background-color: #0056b3;
+    /* Darker color on hover */
+  }
+
+  #resultBubble {
+    position: absolute;
+    /* Position the bubble relative to the container */
+    top: 50%;
+    /* Adjust as needed */
+    right: -20px;
+    /* Adjust as needed */
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    /* Initially hide the bubble */
+  }
+
+  #loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #0056b3;
+    width: 120px;
+    height: 120px;
+    margin-top: 5px;
+    margin-left: 380px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<body>
+
+  <!-- ====== Forms Section Start -->
+  <button id="goBackButton" class="bg-primary hover-bg-blue-dark" onclick="goBack()">
+    <span class="go-back-icon"></span> Go Back
+  </button>
+  <section class="bg-[#F4F7FF] dark:bg-dark ">
+
+    <div class="container">
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4">
+          <div
+            class="wow fadeInUp relative mx-auto max-w-[800px] overflow-hidden rounded-xl shadow-form bg-white dark:bg-dark-2 py-6 px-8 text-center"
+            data-wow-delay=".15s">
+
+            <div id="container">
+              <h1 class="text-2xl text-dark" style="margin-bottom: 20px;">Client Health Analysis Form</h1>
+              <div id="healthAnalysisForm" class="bg-white p-8 pt-8 rounded-lg shadow-md">
+                <div class="grid">
+                  <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="0" max="120" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Female">Non-Binary</option>
+                      <option value="Female">Transgender</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid">
+                  <div class="form-group">
+                    <label for="past_medical_conditions">Past Medical Conditions:</label>
+                    <select id="past_medical_conditions" name="past_medical_conditions" required>
+                      <option value="None">None</option>
+                      <option value="Hypertension">Hypertension</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Asthma">Asthma</option>
+                      <option value="Heart Disease">Heart Disease</option>
+                      <option value="Arthritis">Arthritis</option>
+                      <option value="Cancer">Cancer</option>
+                      <option value="Chronic Obstructive Pulmonary Disease (COPD)">Chronic Obstructive Pulmonary Disease
+                        (COPD)</option>
+                      <option value="Epilepsy">Epilepsy</option>
+                      <option value="Kidney Disease">Kidney Disease</option>
+                      <option value="Liver Disease">Liver Disease</option>
+                      <option value="Obesity">Obesity</option>
+                      <option value="Osteoporosis">Osteoporosis</option>
+                      <option value="Stroke">Stroke</option>
+                      <option value="Thyroid Disorders">Thyroid Disorders</option>
+                      <option value="Multiple Sclerosis (MS)">Multiple Sclerosis (MS)</option>
+                      <option value="Parkinson's Disease">Parkinson's Disease</option>
+                      <option value="Alzheimer's Disease">Alzheimer's Disease</option>
+                      <option value="Depression">Depression</option>
+                      <option value="Anxiety">Anxiety</option>
+                      <option value="Bipolar Disorder">Bipolar Disorder</option>
+                      <option value="Schizophrenia">Schizophrenia</option>
+                      <option value="Autism Spectrum Disorder">Autism Spectrum Disorder</option>
+                      <option value="Attention Deficit Hyperactivity Disorder (ADHD)">Attention Deficit Hyperactivity
+                        Disorder (ADHD)</option>
+                      <option value="Sleep Apnea">Sleep Apnea</option>
+                      <option value="Gastroesophageal Reflux Disease (GERD)">Gastroesophageal Reflux Disease (GERD)
+                      </option>
+                      <option value="Irritable Bowel Syndrome (IBS)">Irritable Bowel Syndrome (IBS)</option>
+                      <option value="Crohn's Disease">Crohn's Disease</option>
+                      <option value="Ulcerative Colitis">Ulcerative Colitis</option>
+                      <option value="Fibromyalgia">Fibromyalgia</option>
+                      <option value="Chronic Fatigue Syndrome">Chronic Fatigue Syndrome</option>
+                      <option value="Migraine">Migraine</option>
+                      <option value="Rheumatoid Arthritis">Rheumatoid Arthritis</option>
+                      <option value="Psoriasis">Psoriasis</option>
+                      <option value="Endometriosis">Endometriosis</option>
+                      <option value="Polycystic Ovary Syndrome (PCOS)">Polycystic Ovary Syndrome (PCOS)</option>
+                      <option value="Interstitial Cystitis">Interstitial Cystitis</option>
+                      <option value="Lupus">Lupus</option>
+                      <option value="Sickle Cell Disease">Sickle Cell Disease</option>
+                      <option value="HIV/AIDS">HIV/AIDS</option>
+                      <!-- Add more options as needed -->
+                    </select>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="current_medical_condition">Current Medical Condition:</label>
+                    <select id="current_medical_condition" name="current_medical_condition" required>
+                      <option value="None">None</option>
+                      <option value="Hypertension">Hypertension</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Asthma">Asthma</option>
+                      <option value="Heart Disease">Heart Disease</option>
+                      <option value="Arthritis">Arthritis</option>
+                      <option value="Cancer">Cancer</option>
+                      <option value="Chronic Obstructive Pulmonary Disease (COPD)">Chronic Obstructive Pulmonary Disease
+                        (COPD)</option>
+                      <option value="Epilepsy">Epilepsy</option>
+                      <option value="Kidney Disease">Kidney Disease</option>
+                      <option value="Liver Disease">Liver Disease</option>
+                      <option value="Obesity">Obesity</option>
+                      <option value="Osteoporosis">Osteoporosis</option>
+                      <option value="Stroke">Stroke</option>
+                      <option value="Thyroid Disorders">Thyroid Disorders</option>
+                      <option value="Multiple Sclerosis (MS)">Multiple Sclerosis (MS)</option>
+                      <option value="Parkinson's Disease">Parkinson's Disease</option>
+                      <option value="Alzheimer's Disease">Alzheimer's Disease</option>
+                      <option value="Depression">Depression</option>
+                      <option value="Anxiety">Anxiety</option>
+                      <option value="Bipolar Disorder">Bipolar Disorder</option>
+                      <option value="Schizophrenia">Schizophrenia</option>
+                      <option value="Autism Spectrum Disorder">Autism Spectrum Disorder</option>
+                      <option value="Attention Deficit Hyperactivity Disorder (ADHD)">Attention Deficit Hyperactivity
+                        Disorder (ADHD)</option>
+                      <option value="Sleep Apnea">Sleep Apnea</option>
+                      <option value="Gastroesophageal Reflux Disease (GERD)">Gastroesophageal Reflux Disease (GERD)
+                      </option>
+                      <option value="Irritable Bowel Syndrome (IBS)">Irritable Bowel Syndrome (IBS)</option>
+                      <option value="Crohn's Disease">Crohn's Disease</option>
+                      <option value="Ulcerative Colitis">Ulcerative Colitis</option>
+                      <option value="Fibromyalgia">Fibromyalgia</option>
+                      <option value="Chronic Fatigue Syndrome">Chronic Fatigue Syndrome</option>
+                      <option value="Migraine">Migraine</option>
+                      <option value="Rheumatoid Arthritis">Rheumatoid Arthritis</option>
+                      <option value="Psoriasis">Psoriasis</option>
+                      <option value="Endometriosis">Endometriosis</option>
+                      <option value="Polycystic Ovary Syndrome (PCOS)">Polycystic Ovary Syndrome (PCOS)</option>
+                      <option value="Interstitial Cystitis">Interstitial Cystitis</option>
+                      <option value="Lupus">Lupus</option>
+                      <option value="Sickle Cell Disease">Sickle Cell Disease</option>
+                      <option value="HIV/AIDS">HIV/AIDS</option>
+                      <!-- Add more options as needed -->
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid">
+                  <div class="form-group">
+                    <label for="allergies">Allergies:</label>
+                    <select id="allergies" name="allergies" required>
+                      <option value="None">None</option>
+                      <option value="Pollen">Pollen</option>
+                      <option value="Dust">Dust</option>
+                      <option value="Peanuts">Peanuts</option>
+                      <option value="Milk">Milk</option>
+                      <option value="Eggs">Eggs</option>
+                      <option value="Shellfish">Shellfish</option>
+                      <option value="Soy">Soy</option>
+                      <option value="Wheat">Wheat</option>
+                      <option value="Fish">Fish</option>
+                      <option value="Tree Nuts">Tree Nuts</option>
+                      <option value="Sesame">Sesame</option>
+                      <option value="Latex">Latex</option>
+                      <option value="Mold">Mold</option>
+                      <option value="Pet Dander">Pet Dander</option>
+                      <option value="Insect Stings">Insect Stings</option>
+                      <option value="Medications">Medications</option>
+                      <option value="Other">Other</option>
+                      <!-- Add more options as needed -->
+                    </select>
+                  </div>
+
+                  <!-- Physical Activity Levels -->
+                  <div class="form-group">
+                    <label for="physical_activity_levels">Physical Activity Levels:</label>
+                    <select id="physical_activity_levels" name="physical_activity_levels" required>
+                      <option value="Low">Low</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="High">High</option>
+                      <option value="None">None</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid">
+                  <div class="form-group">
+                    <label for="smoking_consumption">Smoking Consumption:</label>
+                    <select id="smoking_consumption" name="smoking_consumption" required>
+                      <option value="Never">Never</option>
+                      <option value="Occasional">Occasional</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="Heavy">Heavy</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="alcohol_consumption">Alcohol Consumption:</label>
+                    <select id="alcohol_consumption" name="alcohol_consumption" required>
+                      <option value="Never">Never</option>
+                      <option value="Occasional">Occasional</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="Heavy">Heavy</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Additional form fields... -->
+
+                <div class="grid">
+                  <div class="form-group">
+                    <label for="mental_health_history">Mental Health History:</label>
+                    <select id="mental_health_history" name="mental_health_history" required>
+                      <option value="No significant history">No significant history</option>
+                      <option value="Significant history">Significant history</option>
+                      <option value="No significant history">Unknown</option>
+                    </select>
+                  </div>
+
+
+                  <!-- Allergies -->
+
+                  <div class="grid">
+                    <div class="form-group">
+                      <label for="height">Height (in meters):</label>
+                      <input type="number" id="height" name="height" step="0.01" required />
+                    </div>
+
+                    <!-- Weight -->
+                    <div class="form-group">
+                      <label for="weight">Weight (in kilograms):</label>
+                      <input type="number" id="weight" name="weight" step="0.01" required />
+                    </div>
+                  </div>
+
+
+                  <!-- Additional form fields... -->
+
+
+                  </form>
+                  <div id="loader"
+                    class="hidden fixed top-0 left-0 w-full h-full bg-gray-500 bg-opacity-75 flex justify-center items-center">
+                    <div class="loader"></div>
+                  </div>
+
+
+
+                  <!-- Display Response Message -->
+
+                </div>
+                <div>
+                  <button type="button" onclick="submitForm()"
+                    class="submit-button px-6 py-3 text-base font-medium text-white duration-300 ease-in-out rounded-md signUpBtn bg-primary hover:bg-blue-dark">Generate</button>
+                </div>
+                <div>
+                  <div id="analysis_results" class="result-message">
+                    <div id="result_content">Your health analysis result goes here.</div>
+                  </div>
+                </div>
+
+                <script>
+                  function goBack() {
+                    window.history.back();
+                  }
+                  function submitForm() {
+                    var formData = {
+                      "age": parseInt(document.getElementById('age').value, 10),
+                      "gender": document.getElementById('gender').value,
+                      "past_medical_conditions": document.getElementById('past_medical_conditions').value,
+                      "current_medical_condition": document.getElementById('current_medical_condition').value,
+                      "allergies": document.getElementById('allergies').value,
+                      "physical_activity_levels": document.getElementById('physical_activity_levels').value,
+                      "smoking_consumption": document.getElementById('smoking_consumption').value,
+                      "alcohol_consumption": document.getElementById('alcohol_consumption').value,
+                      "mental_health_history": document.getElementById('mental_health_history').value,
+                      "height": parseInt(document.getElementById('height').value, 10),
+                      "weight": parseInt(document.getElementById('weight').value, 10)
+                    };
+
+                    // Send formData to the server
+                    fetch('https://health-analysis-dkql.onrender.com/Measure My Size/health_analysis', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(formData),
+                    })
+                      .then(response => response.json())
+                      .then(data => {
+                        // Hide the loader after receiving the response
+                        document.getElementById('loader').classList.add('hidden');
+
+                        // Update the content of the result div with the analysis_result
+                        document.getElementById('result_content').innerText = 'Analysis Result:\n\n' + data.analysis_result;
+                      })
+                      .catch(error => {
+                        // Hide the loader in case of an error
+                        document.getElementById('loader').classList.add('hidden');
+
+                        console.error('Error:', error);
+                      });
+
+                    document.getElementById('loader').classList.remove('hidden');
+
+                    // Simulate a 5-second delay (5000 milliseconds)
+                    setTimeout(function () {
+                      // Hide the loader after the delay
+                      document.getElementById('loader').classList.add('hidden');
+
+                      // Update the content of the result div with a sample message
+                      document.getElementById('result_content').innerText = 'Your health analysis result will be displayed here.';
+                    }, 5000); // 5000 milliseconds = 5 seconds
+                  }
+
+                </script>
+              </div>
+
+              <!-- <p class="mb-4 text-base text-body-secondary">
+                By creating an account you are agree with our
+                <a
+                  href="javascript:void(0)"
+                  class="text-primary hover:underline"
+                >
+                  Privacy
+                </a>
+                and
+                <a
+                  href="javascript:void(0)"
+                  class="text-primary hover:underline"
+                >
+                  Policy
+                </a>
+              </p> -->
+
+              <div>
+                <span class="absolute top-1 right-1">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="1.39737" cy="38.6026" r="1.39737" transform="rotate(-90 1.39737 38.6026)"
+                      fill="#3056D3" />
+                    <circle cx="1.39737" cy="1.99122" r="1.39737" transform="rotate(-90 1.39737 1.99122)"
+                      fill="#3056D3" />
+                    <circle cx="13.6943" cy="38.6026" r="1.39737" transform="rotate(-90 13.6943 38.6026)"
+                      fill="#3056D3" />
+                    <circle cx="13.6943" cy="1.99122" r="1.39737" transform="rotate(-90 13.6943 1.99122)"
+                      fill="#3056D3" />
+                    <circle cx="25.9911" cy="38.6026" r="1.39737" transform="rotate(-90 25.9911 38.6026)"
+                      fill="#3056D3" />
+                    <circle cx="25.9911" cy="1.99122" r="1.39737" transform="rotate(-90 25.9911 1.99122)"
+                      fill="#3056D3" />
+                    <circle cx="38.288" cy="38.6026" r="1.39737" transform="rotate(-90 38.288 38.6026)"
+                      fill="#3056D3" />
+                    <circle cx="38.288" cy="1.99122" r="1.39737" transform="rotate(-90 38.288 1.99122)"
+                      fill="#3056D3" />
+                    <circle cx="1.39737" cy="26.3057" r="1.39737" transform="rotate(-90 1.39737 26.3057)"
+                      fill="#3056D3" />
+                    <circle cx="13.6943" cy="26.3057" r="1.39737" transform="rotate(-90 13.6943 26.3057)"
+                      fill="#3056D3" />
+                    <circle cx="25.9911" cy="26.3057" r="1.39737" transform="rotate(-90 25.9911 26.3057)"
+                      fill="#3056D3" />
+                    <circle cx="38.288" cy="26.3057" r="1.39737" transform="rotate(-90 38.288 26.3057)"
+                      fill="#3056D3" />
+                    <circle cx="1.39737" cy="14.0086" r="1.39737" transform="rotate(-90 1.39737 14.0086)"
+                      fill="#3056D3" />
+                    <circle cx="13.6943" cy="14.0086" r="1.39737" transform="rotate(-90 13.6943 14.0086)"
+                      fill="#3056D3" />
+                    <circle cx="25.9911" cy="14.0086" r="1.39737" transform="rotate(-90 25.9911 14.0086)"
+                      fill="#3056D3" />
+                    <circle cx="38.288" cy="14.0086" r="1.39737" transform="rotate(-90 38.288 14.0086)"
+                      fill="#3056D3" />
+                  </svg>
+                </span>
+                <span class="absolute left-1 bottom-1">
+                  <svg width="29" height="40" viewBox="0 0 29 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2.288" cy="25.9912" r="1.39737" transform="rotate(-90 2.288 25.9912)" fill="#3056D3" />
+                    <circle cx="14.5849" cy="25.9911" r="1.39737" transform="rotate(-90 14.5849 25.9911)"
+                      fill="#3056D3" />
+                    <circle cx="26.7216" cy="25.9911" r="1.39737" transform="rotate(-90 26.7216 25.9911)"
+                      fill="#3056D3" />
+                    <circle cx="2.288" cy="13.6944" r="1.39737" transform="rotate(-90 2.288 13.6944)" fill="#3056D3" />
+                    <circle cx="14.5849" cy="13.6943" r="1.39737" transform="rotate(-90 14.5849 13.6943)"
+                      fill="#3056D3" />
+                    <circle cx="26.7216" cy="13.6943" r="1.39737" transform="rotate(-90 26.7216 13.6943)"
+                      fill="#3056D3" />
+                    <circle cx="2.288" cy="38.0087" r="1.39737" transform="rotate(-90 2.288 38.0087)" fill="#3056D3" />
+                    <circle cx="2.288" cy="1.39739" r="1.39737" transform="rotate(-90 2.288 1.39739)" fill="#3056D3" />
+                    <circle cx="14.5849" cy="38.0089" r="1.39737" transform="rotate(-90 14.5849 38.0089)"
+                      fill="#3056D3" />
+                    <circle cx="26.7216" cy="38.0089" r="1.39737" transform="rotate(-90 26.7216 38.0089)"
+                      fill="#3056D3" />
+                    <circle cx="14.5849" cy="1.39761" r="1.39737" transform="rotate(-90 14.5849 1.39761)"
+                      fill="#3056D3" />
+                    <circle cx="26.7216" cy="1.39761" r="1.39737" transform="rotate(-90 26.7216 1.39761)"
+                      fill="#3056D3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>
+  <!-- ====== Forms Section End -->
+
+
+
+  <!-- ====== Footer Section Start -->
+  <!-- ====== Footer Section End -->
+
+  <!-- ====== Back To Top Start -->
+  <a href="javascript:void(0)"
+    class="back-to-top fixed bottom-8 right-8 left-auto z-[999] hidden h-10 w-10 items-center justify-center rounded-md bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-dark">
+    <span class="mt-[6px] h-3 w-3 rotate-45 border-t border-l border-white"></span>
+  </a>
+  <!-- ====== Back To Top End -->
+
+  <!-- ====== All Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+
+</html>
