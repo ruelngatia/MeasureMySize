@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measure My SIze</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+	<link href="./Home.css" rel="stylesheet"/>
+	<script defer src="calender1.js"></script>
+	<script defer src=" Home.js"></script>
+	<link rel="icon" href="./logo-images/measureme-favicon-color.png">
+	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5846616521312298" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<script src="load.js" type="module">
+	</script>
+</head>
+<body>
+	<div id="div1" class="div1 flex flex-col items-center w-[13%] pt-0 h-full overflow-hidden text-gray-400 bg-white ml-0 z-10 fixed">
+		<a class="flex items-center justify-center py-3" href="">
+			<img class=" w-28 mb-4" src="./logo-images/measureme_logo.png"  alt="logo">
+		</a>
+		<a class="flex items-center w-[150px] h-12 mb-2 hover:text-white hover:bg-[#FFCB0A] rounded-xl " href="#Dashboard">
+			<div class=" flex py-4 pl-5 gap-2">
+				<img class="w-5 h-5" src="./logo-images/Dashboard-nav.svg">
+				<span class="text-md font-medium">Dashboard</span>
+			</div>
+		</a>
+		<a class="flex items-center w-[150px] h-12 mb-2 hover:text-white hover:bg-[#FFCB0A] rounded-xl" href="#Booking">
+			<div class=" flex py-4 pl-4 gap-2">
+				<img class="w-6 h-6" src="./logo-images/Booking-nav.svg">
+				<span class="text-md font-medium">Measure My SIze</span>
+			</div>
+		</a>
+	
+		<a class="flex items-center w-[150px] h-12 mb-2 hover:text-white hover:bg-[#FFCB0A] absolute bottom-52 rounded-xl" href="#Notifications">
+			<div class=" flex py-4 pl-4 gap-2">
+				<img class="w-6 h-6" src="./logo-images/Notification-nav.svg">
+				<span class="text-md font-medium">Notification</span>
+			</div>
+		</a>
+		<a class="flex items-center w-[150px] h-12 mb-2 hover:text-white hover:bg-[#FFCB0A] absolute bottom-36 rounded-xl" href="#Support">
+			<div class=" flex py-4 pl-4 gap-2">
+				<img class="w-6 h-6" src="./logo-images/Support-nav.svg">
+				<span class="text-md font-medium">Support</span>
+			</div>
+		</a>
+		<a class=" flex items-center w-[150px] h-12 mb-2 hover:text-white hover:bg-[#FFCB0A] absolute bottom-20 rounded-xl" href="#Settings">
+			<div class=" flex py-4 pl-4 gap-2">
+				<img class="w-6 h-6" src="./logo-images/Settings.svg">
+				<span class="text-md font-medium">Settings</span>
+			</div>
+		</a>
+		<a class="flex items-center w-[150px] h-12 mb-2 hover:text-[#E45A5A] hover:bg-[#ffa8a8] absolute bottom-4 rounded-xl" href="https://measuremysize.com">
+			<div class=" flex py-4 pl-4 gap-2">
+				<img class="w-6 h-6 " src="./logo-images/Logout-nav.svg">
+				<span class="text-md font-medium">Logout</span>
+			</div>
+		</a>
+	</div>
+	<div class="header1 flex justify-between items-center w-[87%] h-[10%] bg-white fixed ml-[13%] mt-0 px-12 overflow-y-auto">
+		<div class="Home w-60 h-[6%]">
+			<h1 class="text-4xl font-bold"></h1>
+		</div>
+		<div class="flex justify-center items-center h-[6%] my-2 ml-0">
+			<input type="search" class="bg-purple-white relative w-96 shadow p-3 rounded-lg" placeholder="Search">
+			<div class="relative mr-4 right-8 text-black">
+				<img src="./logo-images/search-icon.png">
+			</div>
+			<div class="">
+				<a href="#Track" ><img class="w-12 h-12"  src="./logo-images/Location-icon.svg"></a>
+			</div>
+		</div>
+		<a class="flex gap-3 mt-0 mr-12"  href="#Profile">
+			<img class="rounded-[50%] h-12 w-12  bg-gray-100" src="./logo-images/ajay_profile.png"/>
+			<div class="flex flex-col ">
+				<h1 class="font-medium">Logged In</h1>
+				<p class="text-sm"></p>
+			</div>
+		</a>
+	</div>
+	
+	<div class="flex flex-col flex-wrap items-center fixed bg-gray-50  w-[87%] h-[110%] ml-[13%] mt-[5.25%] gap-4  " >
+		<img class="mt-16" id="./logo-images/Home-img.svg">
+		<a href="#Booking">
+			
+			<div id="model-container" style="width: 100%; height:350px;"></div>
+
+			
+			<img src="./logo-images/Play Store.svg"/>
+		</a>
+		
+	</div>
+	
+	<div class= 'all-pages'> 
+		<section id= 'Dashboard' class=" flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+				<div class="Page-Title flex">
+					<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Dashboard</h1>
+				</div>
+				<div class=" justify-center flex flex-wrap md:gap-4 mt-4">
+					<div class="h-72 flex flex-col w-80 bg-[#3b50cc] rounded-3xl shadow-lg">
+						<h1 class="text-2xl font-medium ml-6 mt-12 text-white">Get Measured<br>start Now</h1>
+						<a href="#Booking">
+							<div class="ml-60 mt-24">
+								<img src="logo-images/Arrow-white.svg" />
+							</div>
+						</a>
+					</div>
+					<div class="h-72 w-80 bg-white rounded-3xl shadow-lg">
+						<h1 class="text-2xl font-medium ml-6 mt-12">Schedule  Api<br>Demo</h1>
+						<a href="#Dropoff">
+							<div class="ml-60 mt-24">
+								<img src="logo-images/Arrow-black.svg" />
+							</div>
+						</a>
+					</div>
+					<div class="h-72 w-[492px] bg-white rounded-3xl shadow-lg">
+						<div class="flex ml-6 mt-4">
+							<img src="./logo-images/Graph-icon-dashboard.svg"/>
+							<h1 class="text-2xl font-medium mt-6 mb-4 ml-2">Total Measurements</h1>
+						</div>
+						<div class="year-stats flex flex-col max-h-[100px] mb-0 ml-6">
+							<div class="mt-8">
+								<svg class="relative w-full h-[50px]">
+									<polyline points="9,46 50,12 90,23, 130,11 171,38, 211,48, 251,100,250"></polyline>    
+								</svg>
+							</div>
+							<h1 class="text-2xl mt-12 font-medium ml-2">30</h1>
+						</div>
+					</div>
+				</div>
+				<div class="h-[300px] flex justify-center items-center flex-wrap gap-4">
+					<a href="#Order_Bin">
+						<div class="h-[280px] w-[750px] bg-white rounded-3xl shadow-lg justify-center items-center">
+							<h1 class="pl-12 pt-6 text-2xl font-medium">Purchase a plan</h1>
+							<div class="flex flex-row flex-wrap justify-center items-center mt-12 gap-24">
+								<div class="flex flex-col justify-center items-center">
+									<img class="h-[69px] w-[69px] mb-4" src="logo-images/measureme-favicon-color.png"/>
+									<h2>Basic Plan</h2>
+								</div>
+								<div  class="flex flex-col justify-center items-center">
+									<img class="h-[69px] w-[69px] mb-4" src="logo-images/measureme-favicon-color.png"/>
+									<h2>Silver Plan</h2>
+								</div>
+								<div  class="flex flex-col justify-center items-center">
+									<img class="h-[69px] w-[69px] mb-4" src="logo-images/measureme-favicon-color.png"/>
+									<h2>Premium Plan</h2>
+								</div>
+							</div>
+						</div>
+					</a>
+					<div class="h-[280px] w-[396px] bg-[#FFCB0A] rounded-3xl shadow-lg flex items-center justify-center">
+						<a href="#Report">
+							<div class="h-[210px] w-[320px] m-[40px] bg-white rounded-xl flex flex-col items-center justify-center gap-3">
+								<h1 class="text-xl font-semibold">Report a Bug</h1>
+								<img src="./logo-images/Report-a-dump.svg"/>
+							</div>
+						</a>
+					</div>
+				</div>
+		</section>
+	
+		
+		
+		<section id="Booking" class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto">
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Measure My Size</h1>
+			</div>
+			<div class="flex gap-4 ml-16 items-center justify-center mt-4">
+				<div class="flex flex-col gap-4">
+					<!-- Your form content here -->
+		
+					<div class="flex gap-4 ml-16 items-center justify-center mt-4">
+						<div class="flex flex-col gap-4">
+							<!-- Pop-up message box success -->
+							<div id="popupMessage" style="display: none; position: fixed; top: 20px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 19999;"></div>
+							<!-- Pop-up message box error -->
+							<div id="popupMessageerror" style="display: none; position: fixed; top: 20px; right: 20px; background-color: rgb(219, 12, 12); color: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 19999;"></div>
+							<div class="container">
+								<div id="inputContainer">
+									<div id="step1">
+										<div id="capturePhotos">
+											<img src="./logo-images/Capture.png" alt="capturefront">
+										</div>
+										<!-- Close icon to close the popup -->
+		
+										<label for="userHeight">Enter Your Height (in cm):
+											<input type="number" id="userHeight" placeholder="Height in cm">
+										</label>
+		
+										<label for="frontInput">Front Body Photo
+											<input type="file" id="frontInput" accept=".jpg, .png">
+										</label>
+		
+										<label for="sideInput">Side Body Photo
+											<input type="file" id="sideInput" accept=".jpg, .png">
+										</label>
+									
+										
+										<button id="uploadButton" onclick="uploadImages()">Get Measured</button>
+									</div>
+		
+									<div id="step2" style="display: none;">
+										<h2>View your Measurements adjust to train our Measure My SIze AI</h2>
+										<table id="measurementsTable">
+											
+											<thead>
+												<tr>
+													<th>Body Part</th>
+													<th>Value in (cm)</th>
+													<th>Edit if not accurate</th>
+												</tr>
+											</thead>
+											<tbody id="measurementsBody">
+												<!-- Measurements will be added here dynamically -->
+											</tbody>
+										</table>
+										<button id="downloadButton" onclick="downloadMeasurements()">Download Measurements</button>
+										<button id="downloadButton" onclick="download3d()">Download 3D Avarter</button>
+										<button id="sharebutton" onclick="shareMeasurements()">Share</button>
+										<div id="model-container" style="width: 100%; height:150px;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<!-- Loader -->
+					<div id="loader">
+						<div class="spinner"></div>
+						Extracting and Processing measurements
+					</div>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+		
+					<!-- Include the FileSaver.js library -->
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+					<script>
+						// Function to display a popup message
+						function displayPopupMessage(message, duration) {
+							// Display the message in the popupMessage element
+							var popupMessageElement = document.getElementById('popupMessage');
+							popupMessageElement.textContent = message;
+							popupMessageElement.style.display = 'block';
+		
+							// Hide the message after the specified duration
+							setTimeout(function () {
+								popupMessageElement.style.display = 'none';
+							}, duration);
+						}
+		
+						// Function to display a popup message for errors
+						function displayPopupMessageerror(message, duration) {
+							// Display the message in the popupMessageerror element
+							var popupMessageElement = document.getElementById('popupMessageerror');
+							popupMessageElement.textContent = message;
+							popupMessageElement.style.display = 'block';
+		
+							// Hide the message after the specified duration
+							setTimeout(function () {
+								popupMessageElement.style.display = 'none';
+							}, duration);
+						}
+		
+						document.addEventListener('DOMContentLoaded', function () {
+							// Function to upload images and handle measurements
+							window.uploadImages = function () {
+								var frontInput = document.getElementById('frontInput').files[0];
+								var sideInput = document.getElementById('sideInput').files[0];
+								var userHeight = document.getElementById('userHeight').value;
+		
+								if (!frontInput || !sideInput || !userHeight) {
+									displayPopupMessageerror('Please take both front and side photos and enter your height.', 5000);
+									return;
+								}
+		
+								document.getElementById('loader').style.display = 'block';
+		
+								var formData = new FormData();
+								formData.append('front_image', frontInput);
+								formData.append('side_image', sideInput);
+								formData.append('user_height', userHeight); // Include user height
+		
+								fetch('https://api-measurement-extraction.onrender.com/extract_measurements', {
+									method: 'POST',
+									body: formData
+								})
+									.then(response => {
+										if (!response.ok) {
+											throw new Error('Network response was not ok');
+										}
+										return response.json();
+									})
+									.then(data => {
+										document.getElementById('loader').style.display = 'none';
+										handleMeasurements(data); // Call function to display measurements
+										document.getElementById('step1').style.display = 'none';
+										document.getElementById('step2').style.display = 'block';
+									})
+									.catch(error => {
+										console.error('Error:', error);
+										displayPopupMessageerror('Failed to process images. Please try again later.', 5000);
+										document.getElementById('loader').style.display = 'none';
+									});
+							};
+						});
+		
+						// Function to handle the response containing measurements
+						function handleMeasurements(measurements) {
+							var measurementsTableBody = document.getElementById('measurementsBody');
+							measurementsTableBody.innerHTML = '';
+		
+							if (!Array.isArray(measurements)) {
+								measurements = [measurements];
+							}
+		
+							measurements.forEach(function (measurementSet, index) {
+								for (var key in measurementSet) {
+									if (measurementSet.hasOwnProperty(key)) {
+										var row = document.createElement('tr');
+										var cell1 = document.createElement('td');
+										var cell2 = document.createElement('td');
+										var cell3 = document.createElement('td');
+										var input = document.createElement('input');
+										input.type = 'number';
+										input.value = parseFloat(measurementSet[key]).toFixed(2);
+										input.setAttribute('data-key', key);
+										input.addEventListener('change', function () {
+											measurementSet[this.getAttribute('data-key')] = parseFloat(this.value);
+										});
+										cell1.textContent = key;
+										cell2.textContent = parseFloat(measurementSet[key]).toFixed(2) + ' ';
+										cell3.appendChild(input);
+										row.appendChild(cell1);
+										row.appendChild(cell2);
+										row.appendChild(cell3);
+										measurementsTableBody.appendChild(row);
+									}
+								}
+							});
+		
+							displayPopupMessage('Measurements successfully generated', 10000);
+						}
+		
+						function generate3DModel() {
+							document.getElementById('loader').style.display = 'block';
+							displayPopupMessage('Download Measurements!', 5000);
+							document.getElementById('loader').style.display = 'none';
+						}
+		
+						function downloadMeasurements() {
+							var measurements = [];
+							var rows = document.getElementById('measurementsBody').getElementsByTagName('tr');
+							for (var i = 0; i < rows.length; i++) {
+								var cells = rows[i].getElementsByTagName('td');
+								if (cells.length === 3) {
+									var key = cells[0].textContent;
+									var value = parseFloat(cells[2].getElementsByTagName('input')[0].value);
+									measurements.push({ key: key, value: value });
+								}
+							}
+		
+							// Convert measurements array to JSON string
+							var json = JSON.stringify(measurements);
+		
+							// Create a new Blob object
+							var blob = new Blob([json], { type: 'application/json' });
+		
+							// Create a temporary anchor element
+							var a = document.createElement('a');
+		
+							// Set the href attribute of the anchor to the Blob object
+							a.href = window.URL.createObjectURL(blob);
+		
+							// Set the download attribute of the anchor
+							a.download = 'measurements.txt';
+		
+							// Simulate a click on the anchor to trigger the download
+							a.click();
+		
+							// Cleanup
+							window.URL.revokeObjectURL(a.href);
+						}
+		
+						function shareMeasurements() {
+							var measurements = [];
+							var rows = document.getElementById('measurementsBody').getElementsByTagName('tr');
+							for (var i = 0; i < rows.length; i++) {
+								var cells = rows[i].getElementsByTagName('td');
+								if (cells.length === 3) {
+									var key = cells[0].textContent;
+									var value = parseFloat(cells[2].getElementsByTagName('input')[0].value);
+									measurements.push({ key: key, value: value });
+								}
+							}
+		
+							// Create a message to share on WhatsApp
+							var message = 'My measurements:\n';
+							measurements.forEach(function (measurement) {
+								message += measurement.key + ': ' + measurement.value + ' cm\n';
+							});
+		
+							// Encode the message for use in a URL
+							var encodedMessage = encodeURIComponent(message);
+		
+							// Create the WhatsApp sharing URL
+							var whatsappURL = 'https://wa.me/?text=' + encodedMessage;
+		
+							// Open WhatsApp with the pre-filled message
+							window.open(whatsappURL);
+						}
+						function download3d() {
+    // You can adjust the URL to point to the location of your GLB file
+    var modelURL = './models/male_body.glb';
+
+    // Create a temporary anchor element
+    var a = document.createElement('a');
+    
+    // Set the href attribute of the anchor to the model URL
+    a.href = modelURL;
+
+    // Set the download attribute of the anchor to the model filename
+    a.download = 'usergenerated3davaarter.glb';
+
+    // Simulate a click on the anchor to trigger the download
+    a.click();
+}
+
+					</script>
+				</div>
+			</div>
+		</section>
+		
+		
+		
+		
+		
+	
+		<section id= 'Settings' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Settings</h1>
+			</div>
+			<div class="flex flex-col gap-4 ml-24">
+				<h1 class="text-2xl font-semibold my-4 text-left">Edit Profile</h1>
+				<div class="flex gap-4">
+					<div class="bg-white w-[550px] h-52 rounded-3xl shadow-lg">
+						<div class="flex h-1/2 w-[550px] items-center gap-0">
+							<img class="rounded-[50%] h-16 w-16 ml-6 bg-gray-100" src="./logo-images/ajay_profile.png" alt="profile pic"/>
+							<h1 class="font-xl text-xl ml-2">Update Picture</h1>
+							<button class="py-2 px-3 m-auto bg-[#3b50cc] rounded-lg text-white ml-14">Upload</button>
+							<a href=""><h1 class="text-[#3b50cc] font-semibold mr-14">Remove</h1></a>
+						</div>
+						<div class="flex gap-12 items-center px-6">
+							<div class="w-1/2 h-full flex flex-col gap-2">
+								<h1>First Name</h1>
+								<input class="w-52 h-9 border-2 border-gray-500 rounded-md pl-1" type="text">
+							</div>
+							<div class="w-1/2 h-full flex flex-col gap-2">
+								<h1>Last Name</h1>
+								<input class="w-52 h-9 border-2 border-gray-500 rounded-md pl-1" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="bg-white w-[450px] h-52 rounded-3xl shadow-lg">
+						<h1 class="font-xl ml-4 text-xl pl-2 py-4">Change password</h1>
+						<div class="flex gap-12 items-center px-6">
+							<div class="w-1/2 h-full flex flex-col gap-2">
+								<h1>Old password</h1>
+								<input class="w-40 h-9 border-2 border-gray-500 rounded-md pl-1" type="text">
+							</div>
+							<div class="w-1/2 h-full flex flex-col gap-2">
+								<h1>New password</h1>
+								<input class="w-40 h-9 border-2 border-gray-500 rounded-md pl-1" type="text">
+							</div>
+						</div>
+						<button class="py-2 px-3 ml-6 my-4 m-auto bg-[#3b50cc] rounded-lg text-white">Update</button>
+					</div>
+				</div>
+				<div class="flex bg-white w-[1014px] h-24 rounded-xl shadow-lg">
+					<div class="flex flex-col justify-center ml-8">
+						<h1 class="text-xl font-semibold">Receive emails from Measure My SIze ?</h1>
+						<h1>Subscribe to our newsletter.</h1>
+					</div>
+					<div class="w-16 mt-8 absolute right-64">
+						<label class="inline-flex relative items-center cursor-pointer">
+							<input type="checkbox" value="" class="sr-only peer" checked>
+							<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#3b50cc]"></div>
+						</label>
+					</div>
+				</div>
+				<div class="bg-white w-[1014px] h-24 rounded-xl shadow-lg flex">
+					<div class="flex flex-col justify-center ml-8 h-24">
+						<h1 class="text-xl font-semibold">Delete Account</h1>
+						<h1>By deleting your account you will lose all your data.</h1>
+					</div>
+					<div class="h-24 flex items-center absolute right-64">
+						<a href=""><h1 class="text-red-600 font-semibold">Delete Account</h1></a>
+					</div>
+				</div>
+				<button class="py-2 ml-0 my-4 m-auto bg-[#3b50cc] rounded-lg text-white px-3">Save changes</button>
+
+			</div>
+		</section>
+
+		<section id= 'logout' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+			<div class="flex justify-center items-center mt-4">
+				<img class="" src="logo-images/Logout-main-img.svg"/>
+			</div>
+			<div>
+				<h1 class="text-center text-3xl font-semibold p-2">Are you sure?</h1>
+				<h1 class="text-center text-lg font-lg p-2">You are about to logout, are you sure you want to log out?</h1>
+			</div>
+			<div class="flex justify-center items-center">	
+				<a href="./index.html">
+					<button class="w-48 h-12 rounded-lg bg-red-400 text-white mr-4">LOGOUT</button>
+				</a>
+				<a href="#Dashboard">
+					<button class="w-48 h-12 rounded-lg bg-black text-white">Go back</button>
+				</a>
+			</div>
+		</section>
+
+
+		<section id='Profile' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto"  >
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Profile</h1>
+			</div>
+			<div class="flex items-center flex-col gap-4 h-full mt-8">
+				<div class="flex flex-col px-12 py-8 max-w-[800px] bg-white rounded-3xl shadow-lg">
+					<div class="flex w-full gap-40">
+						<div class="flex">
+							<img class= "rounded-[50%] h-36 w-36 bg-gray-100" src="./logo-images/ajay_profile.png"/>
+							<div class="h-24 w-48 ml-4 flex flex-col">
+								<h1 class="text-xl mt-10 font-semibold">Arthur</h1>
+								<P class="text-md font-md">@arthurbreck</P>
+							</div>
+						</div>
+						<div class="flex gap-4 mt-12 ml-12">
+							<a href=""><img class="h-6 w-6" src="logo-images/link-icon.svg" alt=""></a>
+							<a href=""><img class="h-6 w-6" src="logo-images/facebook-oicon.svg" alt=""></a>
+							<a href=""><img class="h-6 w-6" src="logo-images/instagram-icon.svg" alt=""></a>
+						</div>
+					</div>
+					<h1 class=" my-2 text-lg font-semibold text-[#FFCB0A]">About Me</h1>
+					<P class=" mr-20 w-full">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nemo nulla et impedit enim rerum pariatur aliquid incidunt! Commodi ad suscipit vero eveniet neque ab illo esse optio quidem. Similique.</P>
+					<div class="flex  gap-44 mt-3">
+						<h1 class="text-[#3b50cc] font-semibold">Email : userid121@gmail.com</h1>
+						<h1 class="text-[#3b50cc] font-semibold mr-0">Mobile : +xxxxxxxxxx</h1>
+					</div>
+				</div>
+				<div class="flex gap-4">
+					<div class="h-40 w-64 bg-white rounded-3xl shadow-lg p-4 pl-8">
+						<h1 class="w-full font-medium text-[#FFCB0A] text-lg" >Home Address</h1>
+						<p class="">
+							xxxxxxxxxxxxx,<br>
+							Karen,<br>
+							Pavaratty P. O<br>
+							680507
+						</p>
+					</div>
+					<div class="h-40 w-64 bg-white rounded-3xl shadow-lg p-4 pl-8">
+						<h1 class="w-full font-medium text-[#FFCB0A] text-lg" >Work Address</h1>
+						<p class="">
+							Neelamkavil House,<br>
+							Near R C Church,<br>
+							Pavaratty P. O<br>
+							680507
+						</p>
+					</div>
+					<a href="">
+						<div class="h-40 w-64 bg-white rounded-3xl shadow-lg flex flex-col gap-4 items-center justify-center">
+							<img src="./logo-images/plus-icon-yellow.svg">
+							<h1>Add another address</h1>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section id= 'Schedule' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Schedule</h1>
+			</div>
+			<div class="flex justify-center items-center flex-col gap-6">
+				<div class="flex gap-8 ">
+					<div class="flex flex-col gap-6">
+						<h1 class="font-semibold text-xl">1.Select Api</h1>
+						<div class="h-72 w-[590px] bg-white rounded-3xl shadow-lg flex flex-wrap gap-2 justify-center items-center py-2">
+							<ul class="w-full gap-6 md:grid-cols-2 flex items-center justify-center flex-wrap">
+								<li>
+									<input type="radio" id="Paper or clipboard" name="wastetype" value="Paper or clipboard" class="hidden peer" required>
+									<label for="Paper or clipboard" class="inline-flex items-center justify-between bg-[#f7931a] border-[3px] border-white rounded-xl cursor-pointer peer-checked:border-blue-600">                           
+										<div class=" w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-1.svg" class=""/>
+											<h1 class="text-white leading-none">Measurement Extaction</h1>
+										</div>
+									</label>
+								</li>
+							
+							</ul>
+						</div>
+					</div>
+					<div class="flex flex-col gap-4 ">
+						<h1 class="font-semibold text-xl ml-4">2.Select  date</h1>
+						<div class="h-72 w-72 flex bg-white ">
+							<div class="">
+								<div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+									<div class="container">
+										<div class="mb-4 w-72">
+											<div class="relative">
+												<input type="hidden" name="date" x-ref="date">
+												<input 
+													type="text"
+													readonly
+													x-model="datepickerValue"
+													@click="showDatepicker = !showDatepicker"
+													@keydown.escape="showDatepicker = false"
+													class="w-full pl-3 py-2.5 leading-none rounded-xl shadow-lg focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+													placeholder="Select date">
+						  
+													<div class="absolute right-3 top-2.5 px-3 py-2">
+														<svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+															<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+														</svg>
+													</div>
+						  
+													<div x-text="no_of_days.length"></div>
+													<div x-text="32 - new Date(year, month, 32).getDate()"></div>
+													<div x-text="new Date(year, month).getDay()"></div>
+						  
+													<div 
+														class="bg-white mt-12 rounded-xl shadow-lg p-2 absolute top-0 left-0 w-72" 
+														x-show.transition="showDatepicker"
+														@click.away="showDatepicker = true">
+						  
+														<div class="flex justify-between items-center mb-2">
+															<div>
+																<span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+																<span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+															</div>
+															<div>
+																<button 
+																	type="button"
+																	class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full absolute top-2 right-12" 
+																	:class="{'cursor-not-allowed opacity-25': month == 0 }"
+																	:disabled="month == 0 ? true : false"
+																	@click="month--; getNoOfDays()">
+																	<svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+																	</svg>  
+																</button>
+																<button 
+																	type="button"
+																	class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full absolute top-2 right-8" 
+																	:class="{'cursor-not-allowed opacity-25': month == 11 }"
+																	:disabled="month == 11 ? true : false"
+																	@click="month++; getNoOfDays()">
+																	<svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+																	</svg>									  
+																</button>
+															</div>
+														</div>
+						  
+														<div class="flex flex-wrap mb-3 -mx-1">
+															<template x-for="(day, index) in DAYS" :key="index">	
+																<div style="width: 14.26%" class="px-1">
+																	<div
+																		x-text="day" 
+																		class="text-gray-800 font-medium text-center text-xs"></div>
+																</div>
+															</template>	
+														</div>
+						  
+														<div class="flex flex-wrap -mx-1">
+															<template x-for="blankday in blankdays">
+																<div 
+																	style="width: 14.28%"
+																	class="text-center border p-1 border-transparent text-sm"	
+																></div>
+															</template>	
+															<template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">	
+																<div style="width: 14.28%" class="px-1 mb-1">
+																	<div
+																		@click="getDateValue(date)"
+																		x-text="date"
+																		class="cursor-pointer text-center text-sm rounded-full leading-loose transition ease-in-out duration-100"
+																		:class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"	
+																	></div>
+																</div>
+															</template>
+														</div>
+													</div>
+						  
+											</div>	 
+										</div>
+						  
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="flex gap-7">
+				<ul class="w-full gap-6 md:grid-cols-2 flex items-center justify-center flex-wrap">
+					<li>
+						<input type="radio" id="home address" name="addresstype" value="home address" class="hidden peer" required>
+						<label for="home address" class="inline-flex items-center justify-between bg-white border-[3px] border-white rounded-3xl cursor-pointer peer-checked:border-blue-600">                           
+							<div class="h-52 w-72 bg-white rounded-3xl shadow-lg p-6 pr-4">
+								<h1 class="w-full font-medium text-[#FFCB0A] text-lg p-2" >Home Address</h1>
+								<p class="p-2">
+									Neelamkavil House,<br>
+									Near R C Church,<br>
+									Pavaratty P. O<br>
+									680507
+								</p>
+							</div>
+						</label>
+					</li>	
+
+					<li>
+						<input type="radio" id="work address" name="addresstype" value="work address" class="hidden peer" required>
+						<label for="work address" class="inline-flex items-center justify-between bg-white border-[3px] border-white rounded-3xl cursor-pointer peer-checked:border-blue-600">                           
+							<div class="h-52 w-72 bg-white rounded-3xl shadow-lg p-6 pr-4">
+								<h1 class="w-full font-medium text-[#FFCB0A] text-lg p-2" >Work Address</h1>
+								<p class="p-2">
+									Neelamkavil House,<br>
+									Near R C Church,<br>
+									Pavaratty P. O<br>
+									680507
+								</p>
+							</div>
+						</label>
+					</li>	
+					<div class="h-52 w-72 bg-white rounded-3xl shadow-lg flex flex-col gap-4 items-center justify-center">
+						<img src="./logo-images/plus-icon-yellow.svg">
+						<h1>Add another address</h1>
+					</div>
+				</div>
+				<a class="mt-4" href="#ScheduleSuccess">
+					<button class="px-8 py-4 bg-[#3b50cc] text-white rounded-xl">Schedule Pickup</button>
+				</a>
+			</div>
+		</section>
+
+		<section id= 'Dropoff' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Business Api</h1>
+			</div>
+			<div class="flex gap-8 justify-center flex-wrap">
+				<div class="flex gap-8 ">
+					<div class="flex flex-col gap-6">
+						<h1 class="font-semibold text-xl">1.Select the type of Api</h1>
+						<div class="h-72 w-[590px] bg-white rounded-3xl shadow-lg flex flex-wrap gap-2 justify-center items-center py-2">
+							<ul class="w-full gap-6 md:grid-cols-2 flex items-center justify-center flex-wrap">
+								<li>
+									<input type="radio" id="Paper or clipboard" name="wastetype" value="Paper or clipboard" class="hidden peer" required>
+									<label for="Paper or clipboard" class="inline-flex items-center justify-between bg-[#f7931a] border-[3px] border-white rounded-xl cursor-pointer peer-checked:border-blue-600">                           
+										<div class=" w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-1.svg" class=""/>
+											<h1 class="text-white leading-none">Measurements Extraction</h1>
+										</div>
+									</label>
+								</li>
+								<li>
+									<input type="radio" id="Bio waste" name="wastetype" value="Bio waste" class="hidden peer">
+									<label for="Bio waste" class="inline-flex items-center justify-between bg-[#34a853] border-[3px] border-white  rounded-xl cursor-pointer peer-checked:border-blue-600">
+										<div class=" w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-2.svg" class=""/>
+											<h1 class="text-white ">Bio-waste</h1>
+										</div>
+									</label>
+								</li>
+								<li>
+									<input type="radio" id="Plastic waste" name="wastetype" value="Plastic waste" class="hidden peer">
+									<label for="Plastic waste" class="inline-flex items-center justify-between bg-[#0096ff]  border-[3px] border-white  rounded-xl cursor-pointer peer-checked:border-blue-600">
+										<div class="w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-3.svg" class=""/>
+											<h1 class="text-white leading-none">Plastic waste</h1>
+										</div>
+									</label>
+								</li>
+								<li>
+									<input type="radio" id="Glass waste" name="wastetype" value="Glass waste" class="hidden peer">
+									<label for="Glass waste" class="inline-flex items-center justify-between bg-[#eb4335] border-[3px] border-white  rounded-xl cursor-pointer peer-checked:border-blue-600">
+										<div class=" w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-4.svg" class=""/>
+											<h1 class="text-white ">Glass waste</h1>
+										</div>
+									</label>
+								</li>
+								<li>
+									<input type="radio" id="e-waste" name="wastetype" value="e-waste" class="hidden peer">
+									<label for="e-waste" class="inline-flex items-center justify-between bg-[#bd00ff] border-[3px] border-white  rounded-xl cursor-pointer peer-checked:border-blue-600">
+										<div class=" w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-5.svg" class=""/>
+											<h1 class="text-white ">e-waste</h1>
+										</div>
+									</label>
+								</li>
+								<li>
+									<input type="radio" id="Others" name="wastetype" value="Others" class="hidden peer">
+									<label for="Others" class="inline-flex items-center justify-between bg-[#838383] border-[3px] border-white  rounded-xl cursor-pointer peer-checked:border-blue-600">
+										<div class=" w-40 h-16 flex items-center justify-center rounded-xl shadow-sm gap-2 p-4">
+											<img src="./logo-images/Schedule-logos-6.svg" class=""/>
+											<h1 class="text-white ">Others</h1>
+										</div>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="flex flex-col gap-4 ">
+						<h1 class="font-semibold text-xl ml-4">2.Select date</h1>
+						<div class="h-72 w-72 flex bg-white ">
+							<div class="">
+								<div x-data="app()" x-init="[initDate(), getNoOfDays()]" x-cloak>
+									<div class="container">
+										<div class="mb-4 w-72">
+											<div class="relative">
+												<input type="hidden" name="date" x-ref="date">
+												<input 
+													type="text"
+													readonly
+													x-model="datepickerValue"
+													@click="showDatepicker = !showDatepicker"
+													@keydown.escape="showDatepicker = false"
+													class="w-full pl-3 py-2.5 leading-none rounded-xl shadow-lg focus:outline-none focus:shadow-outline text-gray-600 font-medium"
+													placeholder="Select date">
+						  
+													<div class="absolute top-0 right-0 px-3 py-2">
+														<svg class="h-6 w-6 text-gray-400"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+															<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+														</svg>
+													</div>
+						  
+						  
+													<!-- <div x-text="no_of_days.length"></div>
+													<div x-text="32 - new Date(year, month, 32).getDate()"></div>
+													<div x-text="new Date(year, month).getDay()"></div> -->
+						  
+													<div 
+														class="bg-white mt-12 rounded-3xl shadow-lg p-2 absolute top-0 left-0 w-72" 
+														x-show.transition="showDatepicker"
+														@click.away="showDatepicker = true">
+						  
+														<div class="flex justify-between items-center mb-2">
+															<div>
+																<span x-text="MONTH_NAMES[month]" class="text-lg font-bold text-gray-800"></span>
+																<span x-text="year" class="ml-1 text-lg text-gray-600 font-normal"></span>
+															</div>
+															<div>
+																<button 
+																	type="button"
+																	class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full absolute top-2 right-12" 
+																	:class="{'cursor-not-allowed opacity-25': month == 0 }"
+																	:disabled="month == 0 ? true : false"
+																	@click="month--; getNoOfDays()">
+																	<svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+																	</svg>  
+																</button>
+																<button 
+																	type="button"
+																	class="transition ease-in-out duration-100 inline-flex cursor-pointer hover:bg-gray-200 p-1 rounded-full absolute top-2 right-8" 
+																	:class="{'cursor-not-allowed opacity-25': month == 11 }"
+																	:disabled="month == 11 ? true : false"
+																	@click="month++; getNoOfDays()">
+																	<svg class="h-6 w-6 text-gray-500 inline-flex"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+																	</svg>									  
+																</button>
+															</div>
+														</div>
+						  
+														<div class="flex flex-wrap mb-3 -mx-1">
+															<template x-for="(day, index) in DAYS" :key="index">	
+																<div style="width: 14.26%" class="px-1">
+																	<div
+																		x-text="day" 
+																		class="text-gray-800 font-medium text-center text-xs"></div>
+																</div>
+															</template>
+														</div>
+						  
+														<div class="flex flex-wrap -mx-1">
+															<template x-for="blankday in blankdays">
+																<div 
+																	style="width: 14.28%"
+																	class="text-center border p-1 border-transparent text-sm"	
+																></div>
+															</template>	
+															<template x-for="(date, dateIndex) in no_of_days" :key="dateIndex">	
+																<div style="width: 14.28%" class="px-1 mb-1">
+																	<div
+																		@click="getDateValue(date)"
+																		x-text="date"
+																		class="cursor-pointer text-center text-sm rounded-full leading-loose transition ease-in-out duration-100"
+																		:class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"	
+																	></div>
+																</div>
+															</template>
+														</div>
+													</div>
+						  
+											</div>	 
+										</div>
+						  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-center flex-col ml-52 gap-3 mt-4">
+				<h1 class="font-semibold text-xl ">Api Demo</h1>
+				<div class="mb-3 w-[550px]">
+				  <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-[#3b50cc] focus:outline-none" aria-label="Default select example">
+					  <option selected>one</option>
+					  <option value="1">two</option>
+					  <option value="2">Three</option>
+					  <option value="3">Four</option>
+				  </select>
+				</div>
+			</div>
+			<a class="mt-4 ml-52" href="#DropoffSuccess">
+				<button class="px-6 py-3 bg-[#3b50cc] text-white rounded-lg">Schedule Api</button>
+			</a>
+		</section>
+
+		<section id= 'Report' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Report</h1>
+			</div>
+			<div class="flex flex-col items-center justify-center gap-4 ">
+				<div class="flex flex-col items-center justify-center bg-white rounded-3xl shadow-lg w-[900px] h-[450px] px-8 py-4 gap-2">
+					<h1 class="text-[#3b50cc] text-xl font-semibold">Upload your images</h1>
+					<p class="text-gray-500 text-sm">Please upload a clear picture of the dump.</p>
+					<p class="text-gray-500 text-sm">(Only PNG, JPG images are supported)</p>
+					<a href="">
+						<img class="mt-4" src="./logo-images/Report-upload-image.svg"/>	
+					</a>
+				</div>
+				<div class="flex flex-col justify-center items-center bg-white w-[900px] h-36 gap-4 rounded-3xl shadow-lg py-4">
+					<h1 class="text-black text-xl font-semibold">Bug Description</h1>
+					<input class="w-[825px] h-12 bg-[#ececec] rounded-xl" type="text" >
+				</div>
+				<a class="" href="#ReportdumpSuccess">
+					<button class="px-6 py-3 bg-[#3b50cc] text-white rounded-lg">REPORT</button>
+				</a>
+			</div>
+		</section>
+
+		<section id= 'Track' class=" flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto" >
+			<div class="Page-Title flex">
+				<h1 class="text-4xl font-bold pl-24 -mt-[3.5%] fixed">Track</h1>
+			</div>
+			<div class="flex flex-col justify-center items-center mt-6">
+				<img class="h-[400px]" src="./logo-images/Map-img.svg"/>
+				<table class="w-[800px] table-auto mx-6 mt-6">
+					<tbody class="text-gray-600 text-lg font-lg ">
+						<tr class="border-b border-gray-200">
+							<td class="py-2 pl-6 text-black">Waste picked up</td>
+							<td class="py-2 pr-6 w-[200px]">Today, 11:00 AM</td> 
+						</tr>
+						<tr class="border-b border-gray-200">
+							<td class="py-2 pl-6 text-black">Reached collection point</td>
+							<td class="py-2 pr-6 w-[200px]">Today, 04:03 PM</td> 
+						</tr>
+						<tr class="border-b border-gray-200">
+							<td class="py-2 pl-6 text-black">Sent to Infinite waste LLC</td>
+							<td class="py-2 pr-6 w-[200px]">Today, 05:59 PM</td> 
+						</tr>
+						<tr class="border-b border-gray-200">
+							<td class="py-2 pl-6 text-black">On the way</td>
+							<td class="py-2 pr-6 w-[200px]">Just now</td> 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section id= 'Order_Bin' class=" flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-12 overflow-x-auto pt-8 items-center" >
+			<h1 class="text-[#3b50cc] text-xl font-semibold text-center">Purchase a Plan</h1>
+			<div class="flex gap-8 flex-wrap">
+				<div class="h-[450px] w-80 rounded-2xl shadow-xl ">
+					<img class="ml-6 mt-6" src="./logo-images/Graph-icon-dashboard.svg"/>
+					<div class="flex items-center justify-center flex-col gap-4">
+						<img  class="h-28 w-28" src="./logo-images/measureme-favicon-color.png"/>
+						<h1 class="text-black text-xl font-semibold">Basic Plan</h1>
+						<p class="px-14 text-gray-500 text-sm text-center">The Green-colored dustbins are meant for wet and biodegradable wastes.</p>
+						<div class="custom-number-input h-10 w-32">
+							<div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+								<button data-action="decrement" class=" bg-gray-100 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+									<span class="m-auto text-2xl font-thin">−</span>
+								</button>
+								<input type="number" class=" focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black focus:text-black flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
+								<button data-action="increment" class="bg-gray-100 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+									<span class="m-auto text-2xl font-thin">+</span>
+								</button>
+							</div>
+						  </div>
+						<h1 class="text-[#3b50cc] text-3xl font-semibold text-center">999.00</h1>
+					</div>
+				</div>
+				<div class="h-[450px] w-80 rounded-2xl shadow-xl ">
+					<img class="ml-6 mt-6" src="./logo-images/Graph-icon-dashboard.svg"/>
+					<div class="flex items-center justify-center flex-col gap-4">
+						<img class="h-28 w-28" src="./logo-images/measureme-favicon-color.png"/>
+						<h1 class="text-black text-xl font-semibold">Silver Plan</h1>
+						<p class="px-14 text-gray-500 text-sm text-center">Blue dustbins are meant for disposal of plastic & non-biodegradable wastes.</p>
+						<div class="custom-number-input h-10 w-32">
+							<div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+								<button data-action="decrement" class=" bg-gray-100 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+									<span class="m-auto text-2xl font-thin">−</span>
+								</button>
+								<input type="number" class=" focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black focus:text-black flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
+								<button data-action="increment" class="bg-gray-100 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+									<span class="m-auto text-2xl font-thin">+</span>
+								</button>
+							</div>
+						  </div>
+						<h1 class="text-[#3b50cc] text-3xl font-semibold text-center">999.00</h1>
+					</div>
+				</div>
+				<div class="h-[450px] w-80 rounded-2xl shadow-xl ">
+					<img class="ml-6 mt-6" src="./logo-images/Graph-icon-dashboard.svg"/>
+					<div class="flex items-center justify-center flex-col gap-4">
+						<img class="h-28 w-28" src="./logo-images/measureme-favicon-color.png"/>
+						<h1 class="text-black text-xl font-semibold">Premium Plan</h1>
+						<p class="px-14 text-gray-500 text-sm text-center">Yellow dustbins are meant for papers and glass wastes around us.</p>
+						<div class="custom-number-input h-10 w-32">
+							<div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+								<button data-action="decrement" class=" bg-gray-100 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+									<span class="m-auto text-2xl font-thin">−</span>
+								</button>
+								<input type="number" class=" focus:outline-none text-center w-full bg-gray-100 font-semibold text-md hover:text-black focus:text-black flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
+								<button data-action="increment" class="bg-gray-100 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+									<span class="m-auto text-2xl font-thin">+</span>
+								</button>
+							</div>
+						</div>
+						<h1 class="text-[#3b50cc] text-3xl font-semibold text-center">999.00</h1>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-center items-center">	
+				<a href="#Dashboard">
+					<button class="w-48 h-12 rounded-lg border border-[#3b50cc] text-[#3b50cc] mr-4">Go Back</button>
+				</a>
+				<a href="#OrderbinSuccess">
+					<button class="w-48 h-12 rounded-lg bg-[#3b50cc] text-white">Place Order</button>
+				</a>
+			</div>
+
+		</section>
+
+		<section id= 'ScheduleSuccess' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto justify-center" >
+			<div class="flex justify-center items-center mt-4">
+				<img class="w-[550px]" src="logo-images/Schedule-Success.svg"/>
+			</div>
+			<div>
+				<h1 class="text-center text-4xl font-semibold p-2 leading-none">Order Plan Successful</h1>
+				<h1 class="text-center text-lg font-lg p-2 leading-none">An associate will get in touch with you soon.</h1>
+			</div>
+			<div class="flex justify-center">
+				<a href="#Dashboard">
+					<button class="w-48 h-12 rounded-lg bg-[#3b50cc] text-white">Go back</button>
+				</a>
+			</div>
+		</section>
+
+		<section id= 'DropoffSuccess' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto justify-center" >
+			<div class="flex justify-center items-center mt-0">	
+				<img class="h-[300px]" src="logo-images/Drop-off-success.svg"/>
+			</div>
+			<div>
+				<h1 class="text-center text-4xl font-semibold p-2 leading-none">Drop Off Scheduled Successfully</h1>
+				<h1 class="text-center text-lg font-lg p-2 leading-none">You can drop off at your nearest collection center during working hours.</h1>
+			</div>
+			<div class="flex justify-center">
+				<a href="#Dashboard">
+					<button class="w-48 h-12 rounded-lg bg-[#3b50cc] text-white">Go back</button>
+				</a>
+			</div>
+		</section>
+
+		<section id= 'ReportdumpSuccess' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto justify-center" >
+			<div class="flex justify-center items-center mt-0">	
+				<img class="w-[450px]" src="logo-images/ReportDump-Success.svg"/>
+			</div>
+			<div>
+				<h1 class="text-center text-4xl font-semibold p-2 leading-none">Dump reported Successfully</h1>
+				<h1 class="text-center text-lg font-lg p-2 leading-none">Nearest authorities will be informed and necessary actions wil be taken.</h1>
+			</div>
+			<div class="flex justify-center">
+				<a href="#Dashboard">
+					<button class="w-48 h-12 rounded-lg bg-[#3b50cc] text-white">Go back</button>
+				</a>
+			</div>
+		</section>
+
+		<section id= 'OrderbinSuccess' class="flex flex-col w-[87%] fixed h-[90%] bg-gray-50 ml-[13%] mt-[5%] gap-4 overflow-x-auto justify-center" >
+			<div class="flex justify-center items-center mt-0">	
+				<img class="w-[450px]" src="logo-images/OrderBin-Success.svg"/>
+			</div>
+			<div>
+				<h1 class="text-center text-4xl font-semibold p-2 leading-none">Order Placed Successfully</h1>
+				<h1 class="text-center text-lg font-lg p-2 leading-none">Your request is processed.Ull be upgraded Shortly.</h1>
+			</div>
+			<div class="flex justify-center">
+				<a href="#Dashboard">
+					<button class="w-48 h-12 rounded-lg bg-[#3b50cc] text-white">Go back</button>
+				</a>
+			</div>
+		</section>
+
+	</div>
+</body>
+</html>
