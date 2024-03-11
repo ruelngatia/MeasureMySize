@@ -10,7 +10,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-    origin: ['*', 'https://measuremysize.onrender.com', 'http://localhost:4000']
+    origin: ['*', 'https://measuremysize.onrender.com','https://measuremysize.com', 'http://localhost:4000']
 }))
 app.use(express.static('../front'));
 app.use(express.static('../public'));
