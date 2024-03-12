@@ -669,7 +669,7 @@
           //if paid or is free plan
           console.log(response);
           if (response.data.paid == true || response.data.plan == 'free') {
-            window.location.href = `https://measuremysize.com/dashboard/`;
+            window.location.href = `https://measuremysize.com/dashboard.html#Dashboard`;
           } else {
             const res = await axios.post(`https://${url}/create-checkout-session`,
               {
